@@ -25,7 +25,7 @@ function Home(){
           Enter Github username here:
         </Row>
         <Row>
-          <Form.Group>
+          <Form.Group className="full-width">
             <Form.Control type="text" placeholder="Enter username" onInput={changeUser} />            
           </Form.Group> 
 

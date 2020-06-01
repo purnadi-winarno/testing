@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: flex;
   flex: 1
 }
@@ -11,7 +10,12 @@
   justify-content: center;
   width: 100%;
 }
-
+.full-width {
+  width: 100%
+}
+.error{
+  color: "red"
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
