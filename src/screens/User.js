@@ -3,6 +3,7 @@ import axios from "axios"
 import Parser from 'html-react-parser';
 import { Row, Col } from "react-bootstrap"
 
+const api = 'https://api.github.com'
 const headers = { "Accept": "application/vnd.github.inertia-preview+json" }
 const html_headers = { "Accept": "application/vnd.github.VERSION.html" }
 
@@ -20,7 +21,7 @@ function User(props){
   )
 
   async function getUserProject(user){
-    const result = await axios.get(`/users/${user}/repos`, {headers}).catch(err => {
+    const result = await axios.get(`${api}/users/${user}/repos`, {headers}).catch(err => {
       setApiError(err.response.message)
     })
     if(result)
@@ -29,7 +30,7 @@ function User(props){
   }
 
   async function getRepoReadme(repo){
-    const result = await axios.get(`/repos/${user}/${repo}/readme`, { headers: html_headers }).catch(err => console.log("error: ", err))
+    const result = await axios.get(`${api}/repos/${user}/${repo}/readme`, { headers: html_headers }).catch(err => console.log("error: ", err))
     if(result)
       setReadme(result.data)
     else 
